@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Your favorite word is {{ favorite }}</h1>
+<h2>Fill out the form to change your favorite word</h2>
+
+<!--
+Be sure to provide a `name` attribute for the input
+We use that `name` to extract the value in the back-end
+-->
+<form action="/favorite", method="post">
+    <input name="word" type="text">
+    <input type="submit">
+</form>
+
+{% endblock %}

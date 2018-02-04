@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Your random number is <span id="number">...</span>.</h1>
+<h1>... and its square root is <span id="sqrt">...</span>.</h1>
+
+<p>Every second, we make another call to the server for a new random number.</p>
+
+{% endblock %}
+
+{% block script %}
+
+<!--
+    Javascript!
+
+    getRandomNumber() makes a request to the server for a random number.
+    The server returns JSON.
+    It takes the results and makes changes to the page.
+    Then, it schedules another call to getRandomNumber() for a second (1000 milliseconds) later.
+
+    This code uses JQuery, which is a popular library that makes coding in Javascript easier.
+    This library is imported in base.html. JQuery is optional - I think React.js is an alternative.
+-->
+
+<script>
+
+    function getRandomNumber() {
+        $.get("/gimme", function (data) {
+            $("#number").text(data["num"]);
+            $("#sqrt").text(data["sqrt"]);
+        });
+        setTimeout(getRandomNumber, 1000)
+    }
+
+    getRandomNumber()
+
+</script>
+
+{% endblock %}

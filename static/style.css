@@ -1,0 +1,35 @@
+
+body {
+    background: #34495e;
+    padding: 50px;
+    font: 20px Roboto, sans-serif;
+    font-weight: 300;
+    color: black;
+}
+
+#hotdogs {
+    height: 100px;
+}
+
+a {
+    color: white;
+    display: block;
+    font: 15px Roboto, sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#content {
+    margin: 50px 0;
+    background: white;
+    padding: 50px;
+}
+
+#nav {
+    margin-left: 25px;
+    display: inline-block;
+}

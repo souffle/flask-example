@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+<!--
+
+Flask and Jinja offer a lot of nice features.
+
+You can pass information into this template in Flask. This template is invoked with:
+return render_template('number.html', number=number, squared=squared)
+... which passes in parameters `number` and `squared` for us to use.
+
+This file shows you how to use:
+- variables
+- if statements
+- for statements
+
+... but there are a lot more things you can use here. Note that the syntax is pretty similar to Python.
+
+-->
+
+{% block content %}
+
+<h4>For a different number, change the number in the URL.</h4>
+<h1>Your number is {{ number }}.</h1>
+<h2>If you square your number, it is {{ squared }}.</h2>
+
+{% if 12 < number %}
+<h3>Your number {{ number }} is greater than 12.</h3>
+{% else %}
+<h3>Your number {{ number }} is not greater than 12.</h3>
+{% endif %}
+
+{% for i in range(number-10, number) %}
+<p>{{ i }} is less than your number.</p>
+{% endfor %}
+
+{% endblock %}
